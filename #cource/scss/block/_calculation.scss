@@ -122,7 +122,6 @@
 	&__view {
 		width: 100%;
 		height: 30px;
-		background: #000;
 		color: #a6a6a6;
 
 		font-size: 18px;
@@ -142,7 +141,7 @@
 	}
 	// .calculation__buttons
 	&__buttons {
-		margin-top: 15px;
+		margin-top: 50px;
 	}
 	// .calculation__nav
 	&__nav {
@@ -162,13 +161,132 @@
 		height: 60px;
 
 		text-align: center;
-		background: #3c3c3c;
+		background: #323232;
 		color: #fff;
 		border-radius: 8px;
+
+		&:nth-child(9),
+		&:nth-child(10),
+		&:nth-child(11),
+		&:nth-child(13),
+		&:nth-child(14),
+		&:nth-child(15),
+		&:nth-child(17),
+		&:nth-child(18),
+		&:nth-child(19),
+		&:nth-child(21),
+		&:nth-child(22),
+		&:nth-child(23) {
+			background: #3b3b3b;
+		}
+		&:nth-child(24) {
+			background: #8a43d4;
+		}
+
+		&:nth-child(9):hover,
+		&:nth-child(10):hover,
+		&:nth-child(11):hover,
+		&:nth-child(13):hover,
+		&:nth-child(14):hover,
+		&:nth-child(15):hover,
+		&:nth-child(17):hover,
+		&:nth-child(18):hover,
+		&:nth-child(19):hover,
+		&:nth-child(21):hover,
+		&:nth-child(22):hover,
+		&:nth-child(23):hover {
+			background: #323232;
+		}
+
+		&:hover {
+			background: #3c3c3c;
+		}
 	}
 	// .calculation__btn
 	&__btn {
 		background: transparent;
 		color: #fff;
+		font-weight: 400;
+	}
+	//calculation__btn-percent
+	&__btn-percent {
+		font-size: 18px;
+	}
+	//calculation__btn-clear
+	&__btn-clear {
+	}
+	//calculation__btn-reset
+	&__btn-reset {
+	}
+	//calculation__btn-delete
+	&__btn-delete {
+		font-size: 20px;
+	}
+	// .calculation__btn-oneDivX
+	&__btn-oneDivX {
+		font-size: 16px;
+	}
+	// .calculation__btn-degree
+	&__btn-degree {
+	}
+	// .calculation__btn-root
+	&__btn-root {
+		font-size: 16px;
+	}
+	// .calculation__btn-division
+	&__btn-division {
+		font-size: 20px;
+	}
+	// .calculation__btn-seven
+	&__btn-seven {
+	}
+	// .calculation__btn-eight
+	&__btn-eight {
+	}
+	// .calculation__btn-nine
+	&__btn-nine {
+	}
+	// .calculation__btn-multiplication
+	&__btn-multiplication {
+		font-size: 20px;
+	}
+	// .calculation__btn-four
+	&__btn-four {
+	}
+	// .calculation__btn-five
+	&__btn-five {
+	}
+	// .calculation__btn-six
+	&__btn-six {
+	}
+	// .calculation__btn-subtraction
+	&__btn-subtraction {
+		font-size: 20px;
+	}
+	// .calculation__btn-one
+	&__btn-one {
+	}
+	// .calculation__btn-two
+	&__btn-two {
+	}
+	// .calculation__btn-three
+	&__btn-three {
+	}
+	// .calculation__btn-addition
+	&__btn-addition {
+		font-size: 20px;
+	}
+	// .calculation__btn-signReplacement
+	&__btn-signReplacement {
+	}
+	// .calculation__btn-zero
+	&__btn-zero {
+	}
+	// .calculation__btn-comma
+	&__btn-comma {
+	}
+	// .calculation__btn-equals
+	&__btn-equals {
+		font-size: 20px;
 	}
 }
