@@ -8,6 +8,8 @@
 	<title>Culculation</title>
 
 	<link rel="stylesheet" href="css/main.css">
+
+	<script src="js/main.js" defer></script>
 </head>
 
 <body>
@@ -33,14 +35,14 @@
 				</div>
 			</div>
 			<div class="calculation__display">
-				<p class="calculation__view"></p>
-				<p class='calculation__res'>0</p>
+				<p class="calculation__view" id='view-display'></p>
+				<p class='calculation__res' id='result-display'>0</p>
 			</div>
 			<div class="calculation__buttons">
 				<nav class='calculation__nav'>
-					<ul class='calculation__list'>
+					<ul class='calculation__list' id='listBtn'>
 						<li class='calculation__item'>
-							<button class='calculation__btn calculation__btn-percent'>&#37;</button>
+							<button class='calculation__btn calculation__btn-percent math-operation'>&#37;</button>
 						</li>
 						<li class='calculation__item'>
 							<button class='calculation__btn calculation__btn-clear'>CE</button>
@@ -52,58 +54,60 @@
 							<button class='calculation__btn calculation__btn-delete'>&#8666;</button>
 						</li>
 						<li class='calculation__item'>
-							<button class='calculation__btn calculation__btn-oneDivX'>&#8543;x</button>
+							<button class='calculation__btn calculation__btn-oneDivX math-operation'>&#8543;x</button>
 						</li>
 						<li class='calculation__item'>
-							<button class='calculation__btn calculation__btn-degree'>x^2</button>
+							<button class='calculation__btn calculation__btn-degree math-operation'>x^2</button>
 						</li>
 						<li class='calculation__item'>
-							<button class='calculation__btn calculation__btn-root'>&#8730;x</button>
+							<button class='calculation__btn calculation__btn-root math-operation'>&#8730;x</button>
 						</li>
 						<li class='calculation__item'>
-							<button class='calculation__btn calculation__btn-division'>&#247;</button>
+							<button class='calculation__btn calculation__btn-division math-operation'>&#247;</button>
 						</li>
 						<li class='calculation__item'>
-							<button class='calculation__btn calculation__btn-seven'>7</button>
+							<button class='calculation__btn calculation__btn-seven number'>7</button>
 						</li>
 						<li class='calculation__item'>
-							<button class='calculation__btn calculation__btn-eight'>8</button>
+							<button class='calculation__btn calculation__btn-eight number'>8</button>
 						</li>
 						<li class='calculation__item'>
-							<button class='calculation__btn calculation__btn-nine'>9</button>
+							<button class='calculation__btn calculation__btn-nine number'>9</button>
 						</li>
 						<li class='calculation__item'>
-							<button class='calculation__btn calculation__btn-multiplication'>&#215;</button>
+							<button
+								class='calculation__btn calculation__btn-multiplication math-operation'>&#215;</button>
 						</li>
 						<li class='calculation__item'>
-							<button class='calculation__btn calculation__btn-four'>4</button>
+							<button class='calculation__btn calculation__btn-four number'>4</button>
 						</li>
 						<li class='calculation__item'>
-							<button class='calculation__btn calculation__btn-five'>5</button>
+							<button class='calculation__btn calculation__btn-five number'>5</button>
 						</li>
 						<li class='calculation__item'>
-							<button class='calculation__btn calculation__btn-six'>6</button>
+							<button class='calculation__btn calculation__btn-six number'>6</button>
 						</li>
 						<li class='calculation__item'>
-							<button class='calculation__btn calculation__btn-subtraction'>&#8722;</button>
+							<button
+								class='calculation__btn calculation__btn-subtraction math-operation'>&#8722;</button>
 						</li>
 						<li class='calculation__item'>
-							<button class='calculation__btn calculation__btn-one'>1</button>
+							<button class='calculation__btn calculation__btn-one number'>1</button>
 						</li>
 						<li class='calculation__item'>
-							<button class='calculation__btn calculation__btn-two'>2</button>
+							<button class='calculation__btn calculation__btn-two number'>2</button>
 						</li>
 						<li class='calculation__item'>
-							<button class='calculation__btn calculation__btn-three'>3</button>
+							<button class='calculation__btn calculation__btn-three number'>3</button>
 						</li>
 						<li class='calculation__item'>
-							<button class='calculation__btn calculation__btn-addition'>&#43;</button>
+							<button class='calculation__btn calculation__btn-addition math-operation'>&#43;</button>
 						</li>
 						<li class='calculation__item'>
 							<button class='calculation__btn calculation__btn-signReplacement'>+/-</button>
 						</li>
 						<li class='calculation__item'>
-							<button class='calculation__btn calculation__btn-zero'>0</button>
+							<button class='calculation__btn calculation__btn-zero number'>0</button>
 						</li>
 						<li class='calculation__item'>
 							<button class='calculation__btn calculation__btn-comma'>,</button>
