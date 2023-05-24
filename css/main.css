@@ -211,3 +211,21 @@ h6 {
 .calculation__close:hover {
   background: #e81123;
 }
+.calculation__view {
+  width: 100%;
+  height: 30px;
+  background: #000;
+  color: #a6a6a6;
+  font-size: 20px;
+  text-align: right;
+  padding: 5px 5px;
+}
+.calculation__res {
+  width: 100%;
+  height: 70px;
+  background: transparent;
+  color: #fff;
+  font-size: 38px;
+  text-align: right;
+  padding: 15px 5px;
+}
