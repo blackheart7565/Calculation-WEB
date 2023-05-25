@@ -1,4 +1,4 @@
-function isCheckedValue(arr, value) {
+function isCheckedValues(arr, value) {
 	for (const item of arr) {
 		if (item.innerHTML === value) {
 			return item.innerHTML
@@ -6,19 +6,35 @@ function isCheckedValue(arr, value) {
 	}
 	return ''
 }
-const InputNumber = (item, contentBtn) => {
-	if (isZeroResult) {
-		resultDisplay.textContent = ''
-		isZeroResult = false
-	}
-	resultDisplay.textContent += isCheckedValue(arrayCalNumber, contentBtn)
-}
 function isCheckNullAndUndefined(object) {
 	return object.textContent !== null || object.textContent !== undefined
 		? true
 		: false
 }
-function operation(key) {
+function restDisplay() {
+	viewDisplay.innerHTML = ''
+	resultDisplay.innerHTML = '0'
+	isZeroResult = true
+}
+function restResultDisplay() {
+	resultDisplay.innerHTML = '0'
+}
+
+const InputNumber = (item, contentBtn) => {
+	if (isZeroResult) {
+		resultDisplay.textContent = ''
+		isZeroResult = false
+	}
+
+	if (isSwitch) {
+		resultDisplay.textContent += isCheckedValues(arrayCalNumber, contentBtn)
+	} else {
+		resultDisplay.textContent = ''
+		resultDisplay.textContent += isCheckedValues(arrayCalNumber, contentBtn)
+		isSwitch = true
+	}
+}
+function mathOperation(key) {
 	switch (key) {
 		case '+':
 			if (isCheckNullAndUndefined(resultDisplay)) {
@@ -48,37 +64,50 @@ function operation(key) {
 			break
 		case '⅟x':
 			{
-				if (resultDisplay.innerHTML === 0) {
-					resultDisplay.innerHTML = `Деление на ноль невозможно`
-				} else {
-					resultDisplay.innerHTML = 1 / resultDisplay.innerHTML
+				resultDisplay.innerHTML = resultDisplay.innerHTML.replace(',', '.')
+				if (isSwitch) {
+					if (resultDisplay.innerHTML === 0) {
+						resultDisplay.innerHTML = `Деление на ноль невозможно`
+					} else {
+						viewDisplay.innerHTML = `1/(${resultDisplay.innerHTML})`
+						resultDisplay.innerHTML = 1 / resultDisplay.innerHTML
+					}
+					isSwitch = false
 				}
 			}
 			break
 		case 'x^2':
 			{
+				if (isSwitch) {
+					resultDisplay.innerHTML = resultDisplay.innerHTML.replace(',', '.')
+					viewDisplay.innerHTML = `sqr(${resultDisplay.innerHTML})`
+					resultDisplay.innerHTML = Math.pow(resultDisplay.innerHTML, 2)
+					isSwitch = false
+				}
 			}
 			break
 		case '√x':
 			{
+				if (isSwitch) {
+					resultDisplay.innerHTML = resultDisplay.innerHTML.replace(',', '.')
+					viewDisplay.innerHTML = `√(${resultDisplay.innerHTML})`
+					resultDisplay.innerHTML = Math.sqrt(resultDisplay.innerHTML, 2)
+					isSwitch = false
+				}
 			}
 			break
 		case '%':
 			{
 			}
 			break
-		default:
+		case '+/-':
+			{
+				if (resultDisplay.innerHTML !== '0') {
+					resultDisplay.innerHTML = resultDisplay.innerHTML.replace(',', '.')
+					let tempNum = (-1 * resultDisplay.innerHTML).toString()
+					resultDisplay.innerHTML = tempNum.replace('.', ',')
+				}
+			}
 			break
-	}
-}
-function clickCalBtn(item) {
-	const contentBtn = item.querySelector(
-		'.calculation__item .calculation__btn'
-	).innerHTML
-
-	InputNumber(item, contentBtn)
-
-	if (isCheckedValue(arrayMathOperation, contentBtn)) {
-		operation(contentBtn)
 	}
 }
