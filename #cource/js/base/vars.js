@@ -9,3 +9,8 @@ const resultDisplay = document.getElementById('result-display'),
 	deleteValues = document.getElementById('deleteValues'),
 	clearAll = document.getElementById('clearAll'),
 	clearResult = document.getElementById('clearResult')
+
+///////
+
+let operation = ''
+let isEnterValues = true

@@ -1,7 +1,9 @@
 function clickCalNums(calNum) {
-	if (resultDisplay.innerHTML === '0') {
+	if (resultDisplay.innerHTML === '0' || isEnterValues) {
 		resultDisplay.innerHTML = ''
 	}
+	isEnterValues = false
+	console.log(`isEnterValues = ${isEnterValues}`)
 	resultDisplay.innerHTML += calNum.innerHTML
 }
 function clickClearAll(e) {
@@ -12,6 +14,9 @@ function clickClearResultDisplay(e) {
 }
 function clickDeleteValues(e) {
 	deleteByOneValues()
+}
+function clickEquals(e) {
+	EqualsOperation()
 }
 function clickMathOperations(operation) {
 	mathOperation(operation.innerHTML)

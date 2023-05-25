@@ -15,6 +15,8 @@ function isCheckNullAndUndefined(object) {
 function resetValues() {
 	viewDisplay.innerHTML = ''
 	resultDisplay.innerHTML = '0'
+	operation = ''
+	isEnterValues = true
 }
 // delete value in panel result
 function restResultDisplay() {
@@ -34,21 +36,29 @@ function mathOperation(key) {
 	switch (key) {
 		case '+':
 			{
+				isEnterValues = true
+				operation = '+'
 				viewDisplay.innerHTML = `${resultDisplay.innerHTML} + `
 			}
 			break
 		case '−':
 			{
+				isEnterValues = true
+				operation = '−'
 				viewDisplay.innerHTML = `${resultDisplay.innerHTML} - `
 			}
 			break
 		case '×':
 			{
+				isEnterValues = true
+				operation = '×'
 				viewDisplay.innerHTML = `${resultDisplay.innerHTML} × `
 			}
 			break
 		case '÷':
 			{
+				isEnterValues = true
+				operation = '÷'
 				viewDisplay.innerHTML = `${resultDisplay.innerHTML} ÷ `
 			}
 			break
@@ -70,6 +80,41 @@ function mathOperation(key) {
 			break
 		case '+/-':
 			{
+			}
+			break
+	}
+}
+
+function EqualsOperation() {
+	const arrViewDis = viewDisplay.innerHTML.split(' ')
+
+	switch (operation) {
+		case '+':
+			{
+				resultDisplay.innerHTML =
+					Number.parseFloat(arrViewDis[0]) +
+					Number.parseFloat(resultDisplay.innerHTML)
+			}
+			break
+		case '−':
+			{
+				resultDisplay.innerHTML =
+					Number.parseFloat(arrViewDis[0]) -
+					Number.parseFloat(resultDisplay.innerHTML)
+			}
+			break
+		case '×':
+			{
+				resultDisplay.innerHTML =
+					Number.parseFloat(arrViewDis[0]) *
+					Number.parseFloat(resultDisplay.innerHTML)
+			}
+			break
+		case '÷':
+			{
+				resultDisplay.innerHTML =
+					Number.parseFloat(arrViewDis[0]) /
+					Number.parseFloat(resultDisplay.innerHTML)
 			}
 			break
 	}
