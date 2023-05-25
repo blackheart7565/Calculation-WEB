@@ -1,17 +1,18 @@
-function clickCalBtn(item) {
-	const contentBtn = item.querySelector(
-		'.calculation__item .calculation__btn'
-	).innerHTML
-
-	InputNumber(item, contentBtn)
-
-	if (isCheckedValues(arrayMathOperation, contentBtn)) {
-		mathOperation(contentBtn)
+function clickCalNums(calNum) {
+	if (resultDisplay.innerHTML === '0') {
+		resultDisplay.innerHTML = ''
 	}
-	if (clearAll.innerHTML === contentBtn) {
-		restDisplay()
-	}
-	if (clearResult.innerHTML === contentBtn) {
-		restResultDisplay()
-	}
+	resultDisplay.innerHTML += calNum.innerHTML
+}
+function clickClearAll(e) {
+	resetValues()
+}
+function clickClearResultDisplay(e) {
+	restResultDisplay()
+}
+function clickDeleteValues(e) {
+	deleteByOneValues()
+}
+function clickMathOperations(operation) {
+	mathOperation(operation.innerHTML)
 }
