@@ -3,7 +3,6 @@ function clickCalNums(calNum) {
 		resultDisplay.innerHTML = ''
 	}
 	isEnterValues = false
-	console.log(`isEnterValues = ${isEnterValues}`)
 	resultDisplay.innerHTML += calNum.innerHTML
 }
 function clickClearAll(e) {

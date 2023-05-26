@@ -64,14 +64,27 @@ function mathOperation(key) {
 			break
 		case '⅟x':
 			{
+				if (resultDisplay.innerHTML === '0') {
+					resultDisplay.innerHTML = `Деление на ноль невозможно`
+				} else {
+					isEnterValues = true
+					viewDisplay.innerHTML = `1/(${resultDisplay.innerHTML})`
+					resultDisplay.innerHTML = 1 / resultDisplay.innerHTML
+				}
 			}
 			break
 		case 'x^2':
 			{
+				isEnterValues = true
+				viewDisplay.innerHTML = `sqr( ${resultDisplay.innerHTML} )`
+				resultDisplay.innerHTML = Math.pow(resultDisplay.innerHTML, 2)
 			}
 			break
 		case '√x':
 			{
+				isEnterValues = true
+				viewDisplay.innerHTML = `√( ${resultDisplay.innerHTML} )`
+				resultDisplay.innerHTML = Math.sqrt(resultDisplay.innerHTML, 2)
 			}
 			break
 		case '%':
@@ -80,6 +93,7 @@ function mathOperation(key) {
 			break
 		case '+/-':
 			{
+				resultDisplay.innerHTML = -1 * resultDisplay.innerHTML
 			}
 			break
 	}

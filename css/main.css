@@ -113,7 +113,7 @@ body {
   background-size: cover;
   background-position: 0;
   background-repeat: no-repeat;
-  min-width: 360px;
+  width: 360px;
   border: 0.5px solid #202020;
 }
 .calculation__header {
@@ -227,7 +227,6 @@ body {
   padding: 6px 5px;
 }
 .calculation__res {
-  width: 100%;
   height: 70px;
   background: transparent;
   color: #fff;
@@ -257,7 +256,10 @@ body {
   background: #3b3b3b;
 }
 .calculation__item:nth-child(24) {
-  background: #8a43d4;
+  background: #782bca;
+}
+.calculation__item:nth-child(24):hover {
+  background: #8b3fdc;
 }
 .calculation__item:nth-child(9):hover, .calculation__item:nth-child(10):hover, .calculation__item:nth-child(11):hover, .calculation__item:nth-child(13):hover, .calculation__item:nth-child(14):hover, .calculation__item:nth-child(15):hover, .calculation__item:nth-child(17):hover, .calculation__item:nth-child(18):hover, .calculation__item:nth-child(19):hover, .calculation__item:nth-child(21):hover, .calculation__item:nth-child(22):hover, .calculation__item:nth-child(23):hover {
   background: #323232;
