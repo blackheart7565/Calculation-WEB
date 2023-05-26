@@ -6,13 +6,13 @@ function clickCalNums(calNum) {
 	resultDisplay.innerHTML += calNum.innerHTML
 }
 function clickClearAll(e) {
-	resetValues()
+	navigationCal.resetValues()
 }
 function clickClearResultDisplay(e) {
-	restResultDisplay()
+	navigationCal.restResultDisplay()
 }
 function clickDeleteValues(e) {
-	deleteByOneValues()
+	navigationCal.deleteByOneValues()
 }
 function clickEquals(e) {
 	EqualsOperation()
